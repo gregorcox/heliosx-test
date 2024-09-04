@@ -11,6 +11,7 @@ const Consultation = () => {
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const [submitted, setSubmitted] = useState(false);
 
   const handleAnswerChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newAnswers = [...answers];
@@ -26,8 +27,13 @@ const Consultation = () => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+    setSubmitted(true);
     console.log("Results:", answers);
   };
+
+  if (submitted) {
+    return <p>Thank you!</p>;
+  }
 
   return (
     <form onSubmit={handleSubmit}>
