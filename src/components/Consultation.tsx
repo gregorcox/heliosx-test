@@ -1,15 +1,15 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import submitConsultation from "../api/submitConsultation";
 
-const Consultation = () => {
-  const questions = [
-    "Are you aware of any allergies to Genovian pears?",
-    "Are you currently pregnant or breastfeeding?",
-    "Do you have a history of high blood pressure or heart disease?",
-    "Have you experienced severe side effects from allergy medicine in the past?",
-    "Are you currently taking any other prescription medications?",
-  ];
+const questions = [
+  "Are you aware of any allergies to Genovian pears?",
+  "Are you currently pregnant or breastfeeding?",
+  "Do you have a history of high blood pressure or heart disease?",
+  "Have you experienced severe side effects from allergy medicine in the past?",
+  "Are you currently taking any other prescription medications?",
+];
 
+const Consultation = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [answers, setAnswers] = useState<(string | null)[]>(
     Array(questions.length).fill(null)
