@@ -34,35 +34,45 @@ const Consultation = () => {
   };
 
   if (submitted) {
-    return <p>Thank you!</p>;
+    return <p className="mt-6 text-center text-xl font-semibold">Thank you!</p>;
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <p>{questions[currentQuestionIndex]}</p>
-        <label>
-          <input
-            checked={answers[currentQuestionIndex] === "Yes"}
-            onChange={handleAnswerChange}
-            type="radio"
-            value="Yes"
-          />
-          Yes
-        </label>
-        <label>
-          <input
-            checked={answers[currentQuestionIndex] === "No"}
-            onChange={handleAnswerChange}
-            type="radio"
-            value="No"
-          />
-          No
-        </label>
+    <form
+      className="mt-6 mx-4 p-6 bg-white rounded-lg border-2 border-blue-500 md:mx-auto md:max-w-md"
+      onSubmit={handleSubmit}
+    >
+      <div className="mb-4">
+        <p className="text-lg font-medium mb-2">
+          {questions[currentQuestionIndex]}
+        </p>
+        <div className="flex gap-4">
+          <label className="flex items-center">
+            <input
+              checked={answers[currentQuestionIndex] === "Yes"}
+              className="mr-2"
+              onChange={handleAnswerChange}
+              type="radio"
+              value="Yes"
+            />
+            Yes
+          </label>
+          <label className="flex items-center">
+            <input
+              checked={answers[currentQuestionIndex] === "No"}
+              className="mr-2"
+              onChange={handleAnswerChange}
+              type="radio"
+              value="No"
+            />
+            No
+          </label>
+        </div>
       </div>
 
       {currentQuestionIndex < questions.length - 1 ? (
         <button
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300"
           disabled={answers[currentQuestionIndex] === null}
           onClick={handleNextQuestion}
           type="button"
@@ -70,7 +80,11 @@ const Consultation = () => {
           Next
         </button>
       ) : (
-        <button disabled={answers[currentQuestionIndex] === null} type="submit">
+        <button
+          className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:bg-gray-300"
+          disabled={answers[currentQuestionIndex] === null}
+          type="submit"
+        >
           Submit
         </button>
       )}
