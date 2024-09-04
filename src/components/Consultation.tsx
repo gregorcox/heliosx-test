@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import submitConsultation from "../api/submitConsultation";
 
 const Consultation = () => {
   const questions = [
@@ -30,7 +31,7 @@ const Consultation = () => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     setSubmitted(true);
-    console.log("Results:", answers);
+    submitConsultation(answers);
   };
 
   if (submitted) {
