@@ -1,6 +1,4 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Consultation from "./Consultation";
+import { Consultation, Footer, Header } from "./components";
 
 function App() {
   return (
