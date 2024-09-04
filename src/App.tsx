@@ -1,15 +1,17 @@
-import "./App.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Consultation from "./Consultation";
-import logo from "./logo.png";
 
 function App() {
   return (
-    <div>
-      <header className="p-4 border-b-2 border-blue-500">
-        <img alt="med express logo" src={logo} width={200} />
-      </header>
+    <div className="flex flex-col min-h-lvh">
+      <Header />
 
-      <Consultation />
+      <main className="flex-1">
+        <Consultation />
+      </main>
+
+      <Footer />
     </div>
   );
 }

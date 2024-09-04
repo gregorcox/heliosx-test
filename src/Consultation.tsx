@@ -39,7 +39,7 @@ const Consultation = () => {
 
   return (
     <form
-      className="mt-6 mx-4 p-6 bg-white rounded-lg border-2 border-blue-500 md:mx-auto md:max-w-md"
+      className="my-6 mx-4 p-6 bg-white rounded-lg border-2 border-blue-500 md:mx-auto md:max-w-md"
       onSubmit={handleSubmit}
     >
       <div className="mb-4">
