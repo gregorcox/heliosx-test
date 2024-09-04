@@ -9,9 +9,11 @@ const Consultation = () => {
     "Are you currently taking any other prescription medications?",
   ];
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
-  const [submitted, setSubmitted] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+  const [answers, setAnswers] = useState<(string | null)[]>(
+    Array(questions.length).fill(null)
+  );
+  const [submitted, setSubmitted] = useState<boolean>(false);
 
   const handleAnswerChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newAnswers = [...answers];
