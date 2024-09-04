@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 const Consultation = () => {
   const questions = [
@@ -24,8 +24,13 @@ const Consultation = () => {
     }
   };
 
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    console.log("Results:", answers);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <p>{questions[currentQuestionIndex]}</p>
         <label>
