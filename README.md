@@ -2,6 +2,10 @@
 
 This app allows users to complete a consultation to determine their sutability for allergy medication. Once the user completes the consultation questions, their answers will be logged in the console.
 
+The app currently logs the answers as an array of "Yes" or "No" strings, but would be ammended based on the requirements of the backend endpoint.
+
+The app allows adding more yes/no question strings to the questions array without further ammendments to the code.
+
 The app uses the following technologies:
 
 - React.js
